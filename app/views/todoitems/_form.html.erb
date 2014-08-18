@@ -1,0 +1,21 @@
+<%= form_for(@todoitem) do |f| %>
+  <% if @todoitem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@todoitem.errors.count, "error") %> prohibited this todoitem from being saved:</h2>
+
+      <ul>
+      <% @todoitem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "What would you like to add or edit? How does this item rate ? Rate 1 - 5." %><br>
+    <%= f.text_area :purpose %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Create" %>
+  </div>
+<% end %>

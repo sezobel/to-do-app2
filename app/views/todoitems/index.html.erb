@@ -1,0 +1,26 @@
+<h1>Listing Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Items</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todoitems.each do |todoitem| %>
+      <tr>
+        <td><%= todoitem.purpose %></td>
+        <td><%= link_to 'View', todoitem %></td>
+        <td><%= link_to 'Rate', todoitem %></td>
+        <td><%= link_to 'Edit', edit_todoitem_path(todoitem) %></td>
+        <td><%= link_to 'Delete', todoitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item', new_todoitem_path %>

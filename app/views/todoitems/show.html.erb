@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @todoitem.purpose %>
+</p>
+
+<%= link_to 'Edit', edit_todoitem_path(@todoitem) %> |
+<%= link_to 'Back', todoitems_path %>
